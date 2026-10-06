@@ -108,6 +108,10 @@ Several findings combine into full compromises:
 | Cleartext traffic | Allowed | Forbidden (HTTPS + pinning) |
 | allowBackup / debuggable | true / true | false / build-managed |
 
+| Before (vulnerable build) | After (hardened build) |
+|---|---|
+| <img src="docs/screenshots/mobsf_before_score.png" width="400"> | <img src="docs/screenshots/mobsf_after_score.png" width="400"> |
+| <img src="docs/screenshots/mobsf_before_findings.png" width="400"> | <img src="docs/screenshots/mobsf_after_findings.png" width="400"> |
 **Why I stopped at 61/100.** The one remaining HIGH finding is a false positive: MobSF flags an AES-CBC class inside `flutter_secure_storage` that ships with the library but is never executed by the app. Replacing a vetted library with hand-written crypto just to raise the score would make the app *less* secure.
 
 ## Lessons learned
