@@ -1,0 +1,8 @@
+node_modules/
+.env
+# Key material is generated locally (see keys/README.md and certs/README.md)
+# and must never be committed.
+keys/*
+certs/*
+!keys/README.md
+!certs/README.md

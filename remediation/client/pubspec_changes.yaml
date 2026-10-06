@@ -1,0 +1,35 @@
+# ── pubspec.yaml — changements Phase 2c (secured) ───────────────────────────
+# Appliquer ces modifications dans cryptovault_secured/pubspec.yaml.
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ✅ AJOUTER
+  flutter_secure_storage: ^9.2.2   # V2/V5b/V9b — Keystore (AES-256-GCM)
+  cryptography: ^2.7.0             # V9a/V9b — Argon2id + AES-GCM
+
+  # ✅ CONSERVER
+  dio: ^5.9.2                      # client HTTP (désormais TLS + pinning)
+  webview_flutter: ^4.13.1         # Support (JS désactivé, voir V7)
+  go_router: ^14.2.0
+  intl: ^0.19.0
+  uuid: ^4.4.0
+  qr_flutter: ^4.1.0
+  cupertino_icons: ^1.0.8
+
+  # ❌ SUPPRIMER
+  #   encrypt:           -> remplacé par cryptography (plus d'AES-ECB)
+  #   jwt_decoder:       -> le rôle est vérifié côté serveur (/admin/whoami)
+  #   shared_preferences:-> remplacé par flutter_secure_storage pour tout ce
+  #                         qui est sensible. (Le garder UNIQUEMENT s'il reste
+  #                         des préférences non sensibles, ex. thème.)
+  #   crypto:            -> supprimable si plus aucun usage de md5/sha (à vérifier)
+  #   http:              -> déjà inutilisé (dio est le client réel)
+
+# ✅ Déclarer les assets embarqués (certificat épinglé + clé publique JWT)
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/certs/api.cryptovault.crt
+    - assets/keys/jwt_public.pem

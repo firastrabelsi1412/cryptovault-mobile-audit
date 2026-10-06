@@ -126,9 +126,10 @@ cryptovault-mobile-audit/
 ├── report/
 │   └── CryptoVault_Security_Audit_Report.pdf   # full audit report
 └── docs/screenshots/                           # proof-of-concept captures
+└── remediation/  # hardened client + secured backend
 ```
 
-The application source code is not included; this repository documents the audit, its evidence and its remediation.
+The `remediation/` folder contains the hardened Flutter client files and the secured Express backend. Keys and certificates are not included; see the README files in `server/keys` and `server/certs` to generate your own.
 
 ## Author
 

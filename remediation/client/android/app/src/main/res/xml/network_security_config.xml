@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <!-- ✅ V3/V8 — HTTPS obligatoire. Aucun trafic en clair autorisé.
+       (Le client épingle de toute façon son propre certificat via Dio,
+        cf. lib/core/network.dart, donc ce trust-anchor n'est qu'une
+        défense supplémentaire.) -->
+  <base-config cleartextTrafficPermitted="false">
+    <trust-anchors>
+      <certificates src="system"/>
+    </trust-anchors>
+  </base-config>
+</network-security-config>

@@ -1,0 +1,19 @@
+{
+  "_comment": "Seed for the SECURED CryptoVault backend. Passwords are plaintext ONLY in this seed file and are bcrypt-hashed in memory at server boot. No seed phrases or private keys are stored server-side (per the secured design: secrets never leave the device).",
+  "users": [
+    { "id": 1, "email": "ali@cryptovault.tn",   "password": "Ali2026!",   "role": "user",  "fullName": "Ali Ben Salah", "kycVerified": true },
+    { "id": 2, "email": "sarra@cryptovault.tn", "password": "Sarra2026!", "role": "user",  "fullName": "Sarra Trabelsi", "kycVerified": true },
+    { "id": 3, "email": "admin@cryptovault.tn", "password": "Admin@2026", "role": "admin", "fullName": "Admin CryptoVault", "kycVerified": true }
+  ],
+  "wallets": [
+    { "id": 1001, "userId": 1, "address": "0xA11CE000000000000000000000000000000A11CE", "currency": "USDT", "balance": 1250.00 },
+    { "id": 1002, "userId": 2, "address": "0x5A88A0000000000000000000000000000005A88A", "currency": "USDT", "balance": 4820.50 },
+    { "id": 1003, "userId": 3, "address": "0xAD3100000000000000000000000000000000AD31", "currency": "BTC",  "balance": 25.0 }
+  ],
+  "transactions": [
+    { "id": 5001, "userId": 1, "type": "receive", "amount": 500.0,  "currency": "USDT", "counterparty": "0x5A88A...A88A", "ts": "2026-05-20T10:12:00Z" },
+    { "id": 5002, "userId": 1, "type": "send",    "amount": 120.0,  "currency": "USDT", "counterparty": "0xC0FFEE...FFEE", "ts": "2026-05-22T14:03:00Z" },
+    { "id": 5003, "userId": 2, "type": "receive", "amount": 4820.5, "currency": "USDT", "counterparty": "0xA11CE...11CE", "ts": "2026-05-21T09:00:00Z" },
+    { "id": 5004, "userId": 3, "type": "receive", "amount": 25.0,   "currency": "BTC",  "counterparty": "0xFAUCET...CET",  "ts": "2026-05-01T00:00:00Z" }
+  ]
+}
